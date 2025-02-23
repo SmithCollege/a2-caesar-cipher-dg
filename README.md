@@ -9,6 +9,8 @@ Programming Partner Name:
 Other Collaborators (and kudos to people who were especially helpful):
 
 References Used:
+https://www.baeldung.com/java-generic-array
+Java Documentation
 
 
 ## Reflection Questions

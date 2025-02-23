@@ -19,7 +19,9 @@ public class CaesarCipher {
      * @param offset Offset to use when creating `cipher` of DynamicArray type
      */
     CaesarCipher(int offset){
-        // Fill in here
+        this.offset = offset;
+        alphabet = new Character[]{'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'};
+        cipher = new DynamicArray<>(offset, alphabet);
     }
 
     /** Implementation of linear search that looks through the alphabet
@@ -28,27 +30,42 @@ public class CaesarCipher {
      * @return int indicating position of val in the alphabet array
      */
     public int findIndex(char val){
-        // This is a stub -- fill in the code and return the
-        // value you calculate
-        return 0;
+        for (int i = 0; i < this.alphabet.length; i++) {
+            if (this.alphabet[i].equals(val)) {
+                return i;
+            }
+        }
+        return -1;
     }
 
     /** Encode a message using the cipher
-     * @param T message to encode
+     * @param message message to encode
      * @return encoded message */  
     public String encode(String message){
-        // Fill in here and update return statement based on your code
-        return new String(); 
+        message = message.toLowerCase();
+        char[] characters = message.toCharArray();
+        String nMessage = "";
+        for (int i = 0; i < characters.length; i++) {
+            nMessage += cipher.get(i,offset);
+        }
+
+        return nMessage;
      }
 
     /** Decode a message using the cipher 
      * @param String message to decode
-     * @param int key to use in decoding
+     * @param int key to use in decoding (the offset?)
      * @return decoded message
     */
     public String decode(String message){
-        // Fill in here and update return statement based on your code
-        return new String();
+        char[] characters = message.toCharArray();
+        String decodedMessage = "";
+        
+        for (int i = 0; i < characters.length; i++) {
+            decodedMessage += cipher.get(i,0);
+            }
+        
+        return decodedMessage;
     }
 
     public static void main(String[] args) {

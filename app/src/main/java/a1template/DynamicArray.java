@@ -1,27 +1,19 @@
 // Do not change the line below. It lets Gradle find your 
 // Classes to build the project
 package a1template;
-// DynamicArray should be written to work for any generic object.
-
-    // 
-    // public T get(int i);
-
-
-    // public T get(int i, int offset);
-
-
+import java.util.Arrays;
 
 
 public class DynamicArray<T> implements IndexAccess<T>{
     
     private T[] arr;
-    private int offset;
+    private int aOffset;
 
     // constructor to make a new DynamicArray Object from an array
     // index is the offset?
     public DynamicArray(int offset, T[] arr) {
         this.arr = arr;
-        this.offset = offset;
+        this.aOffset = offset;
 
     }
 
@@ -40,18 +32,48 @@ public class DynamicArray<T> implements IndexAccess<T>{
     //  * @return value stored at the given index
 /  */
     public T get(int i, int offset) {
-        // //the numbers in indexes until then are moved to the end of the array
-        // T[] result = (T[])Array.newInstance(this.arr.getClass(), this.arr.length);
+        // the values in indexes until offset are moved to the end of the array
+        T[] result = (T[])new Object[this.arr.length];
 
-        // for (int a = offset; a < arr.length-offset; a++) {
-        //     result[i] = this.arr[i+offset];
-        // }
-        // for (int b = this.arr.length-offset, c = 0; b < this.arr.length; b++, c++){
-        //     result[b] = this.arr[c];
-        // }
+        //System.out.println(offset);
+
+        ////passes setup test
+        for (int a = offset, d = 0; a < this.arr.length; a++, d++) {
+
+            //System.out.println(a);
+            if (offset>-1) {
+                result[a] = this.arr[d];
+            }
+            else {
+                result[d] = this.arr[(this.arr.length)+a];
+            }
+            
+        }
+        //values in indexes equal to and after the offset are set to be the values that came before the offset
+        for (int b = 0, c = this.arr.length-offset; c < this.arr.length; b++, c++){
+
+            result[b] = this.arr[c];
+
+        }
+
+        System.out.println(Arrays.toString(result));
 
 
-        return this.arr[i+offset];
+
+
+        if (i>=this.arr.length) {
+            i = i-this.arr.length;
+            return result[i];
+        }
+
+        else if (i>-1 && i < this.arr.length) {
+            return result[i];
+        }
+
+        
+        else {
+            return result[result.length+i];
+        }
         
 
     }
@@ -65,4 +87,47 @@ public class DynamicArray<T> implements IndexAccess<T>{
 
     }
 
+    
+
+        public static void main(String[] args) {
+
+            //Character[] alphabet = new Character[]{'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'};
+
+            Character[] alphabet = new Character[]{'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'};
+            //[d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z, a, b, c]
+            //[x,y,z,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,a,b,c]
+            DynamicArray<Character> cipher = new DynamicArray<>(3, alphabet);
+
+            System.out.println(cipher.get(17,3));
+
+            //CaesarCipher cipher = new CaesarCipher(3);
+            //System.out.println(cipher.get(17));
+
+        CaesarCipher test = new CaesarCipher(8);
+        //'i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z','a','b','c','d','e','f','g','h',};
+        System.out.println(test.encode("this is a secret message")); // i-offset
+
+
+
+
+        }
+
 }
+
+
+///passes offsetalphatest
+        // for (int a = offset, d = 0; d < this.arr.length-offset; a++, d++) {
+
+        //     //System.out.println(a);
+        //     if (offset>-1) {
+        //         result[d] = this.arr[a];
+        //     }
+        //     else {
+        //         result[d] = this.arr[(this.arr.length)+a];
+        //     }
+            
+        // }
+        // //values in indexes equal to and after the offset are set to be the values that came before the offset
+        // for (int b = 0, c = this.arr.length-offset; c < this.arr.length; b++, c++){
+        //     result[c] = this.arr[b];
+        // }

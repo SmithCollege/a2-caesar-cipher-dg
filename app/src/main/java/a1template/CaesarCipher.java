@@ -38,37 +38,94 @@ public class CaesarCipher {
         return -1;
     }
 
+    public char get(int index) {
+        return cipher.get(index,this.offset);
+
+    }
+
     /** Encode a message using the cipher
      * @param message message to encode
      * @return encoded message */  
+
     public String encode(String message){
         message = message.toLowerCase();
         char[] characters = message.toCharArray();
         String nMessage = "";
+        int alphaInd = 0;
+
         for (int i = 0; i < characters.length; i++) {
-            nMessage += cipher.get(i,offset);
+            if (Character.isLetter(characters[i])) {
+                 // get index of character in alphabet
+                 for (int j = 0; j < alphabet.length; j++) {
+                    if (characters[i] == alphabet[j]) {
+                        alphaInd = j;
+                        break;
+                    }
+                }
+                
+                
+                nMessage += get(alphaInd);
+                //cipher.get(i,this.offset);
+
+                
+            }
+
+            else{
+
+                nMessage += characters[i];
+               
+                }
+            }
+            return nMessage;
         }
 
-        return nMessage;
-     }
+
 
     /** Decode a message using the cipher 
      * @param String message to decode
      * @param int key to use in decoding (the offset?)
      * @return decoded message
     */
+    //"this is a secret message", classUnderTest.decode()
+    // "lzak ak s kwujwl ewkksyw"
     public String decode(String message){
+
         char[] characters = message.toCharArray();
         String decodedMessage = "";
+        int alphaInd = 0;
         
         for (int i = 0; i < characters.length; i++) {
-            decodedMessage += cipher.get(i,0);
+            
+            if (Character.isLetter(characters[i])) {
+                // get index of character in alphabet
+                for (int j = 0; j < alphabet.length; j++) {
+                   if (characters[i] == alphabet[j]) {
+                       alphaInd = j;
+                       break;
+                   }
+               }
+               
+               
+               decodedMessage += get(alphaInd+this.offset);
+
+               
+           }
+           
+           else{
+
+            decodedMessage += characters[i];
+ 
+            }
+
             }
         
         return decodedMessage;
     }
 
     public static void main(String[] args) {
+
+        CaesarCipher test = new CaesarCipher(3);
+        System.out.println(test.get(17));
     }
     
 }

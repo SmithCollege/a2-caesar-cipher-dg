@@ -18,5 +18,6 @@ Java Documentation
 What was your favorite part of this assignment?
 
 What was most challenging about this assignment?
+I couldn't figure out how to get the tests working at first. Once I did, I had to change something for each one. Then for the integer array, the resulting array kept being set to [null, null, null, null, null, 0, 1, 2, 3, 4] for the final DynamicArray test - I realized that it wasn't running the entire for loop because my initial value already started at false because I used the wrong numbers.
 
 General comments on your experience with this assignment:

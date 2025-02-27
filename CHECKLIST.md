@@ -11,37 +11,37 @@ your work, please indicate the status of each item
 
 Assignment Points (out of 25):
 
-_____ 1 pt: Interface is properly implemented
+__YES__ 1 pt: Interface is properly implemented
 
-_____ 1 pt: Appropriate instance variables defined for `DynamicArray`
+__YES__ 1 pt: Appropriate instance variables defined for `DynamicArray`
 
-_____ 2 pt: Getters and setters written for `DynamicArray` 
+__YES__ 2 pt: Getters and setters written for `DynamicArray` 
 
-_____ 1 pt: `DynamicArray` passes provided tests
+__PART__ 1 pt: `DynamicArray` passes provided tests
 
-_____ 1 pts: `CaesarCipher` constructor populates all instance variables
+__YES__ 1 pts: `CaesarCipher` constructor populates all instance variables
 
-_____ 1 pts: Linear search is correctly implemented in `CaesarCipher.findIndex`
+__YES__ 1 pts: Linear search is correctly implemented in `CaesarCipher.findIndex`
 
-_____ 2 pts: `CaesarCipher` can encode messages and passes tests
+__YES__ 2 pts: `CaesarCipher` can encode messages and passes tests
 
-_____ 2 pts: `CaesarCipher` can decode messages and passes tests
+__YES__ 2 pts: `CaesarCipher` can decode messages and passes tests
 
-_____ 2 pts: At least two encoding tests are provided in `YourTests.java`
+__NO__ 2 pts: At least two encoding tests are provided in `YourTests.java`
 
-_____ 2 pts: At least two decoding tests are provided in `YourTests.java`
+__NO__ 2 pts: At least two decoding tests are provided in `YourTests.java`
 
-_____ KUDOS: Handles capitalization through cleaning the message 
+__YES__ KUDOS: Handles capitalization through cleaning the message 
 
-_____ DOUBLE KUDOS: Retains capitalization
+__NO__ DOUBLE KUDOS: Retains capitalization
 
 ## General Items:
 
-_____ 4 pts: Programs compile without errors or warnings 
+__YES__ 4 pts: Programs compile without errors or warnings 
 
-_____ 2 pts: Executes fully & consistently without crashing (exceptions/freezing)
+__YES?__ 2 pts: Executes fully & consistently without crashing (exceptions/freezing)
 
-_____ 2 pt: Complies with style guidelines:
+__YES__ 2 pt: Complies with style guidelines:
 
       _____ Classes & class members all have Javadoc header comments 
 
@@ -53,6 +53,6 @@ _____ 2 pt: Complies with style guidelines:
 
       _____ Methods avoid confusing side effects  
 
-_____ 1 pt: All required files included with submission (including basic readme info and completed checklist file) 
+__YES__ 1 pt: All required files included with submission (including basic readme info and completed checklist file) 
 
-_____ 1 pt: README.md contains answers your reflection on the assignment 
+__YES__ 1 pt: README.md contains answers your reflection on the assignment 

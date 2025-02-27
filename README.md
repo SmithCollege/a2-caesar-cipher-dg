@@ -10,14 +10,19 @@ Other Collaborators (and kudos to people who were especially helpful):
 
 References Used:
 https://www.baeldung.com/java-generic-array
-Java Documentation
+Java Documentation (isLetter(), generic types)
+
 
 
 ## Reflection Questions
 
 What was your favorite part of this assignment?
+    My favorite part of the assignment was having those 'a-ha' moments where I figure out the solution and finding out that it works.
 
 What was most challenging about this assignment?
-I couldn't figure out how to get the tests working at first. Once I did, I had to change something for each one. Then for the integer array, the resulting array kept being set to [null, null, null, null, null, 0, 1, 2, 3, 4] for the final DynamicArray test - I realized that it wasn't running the entire for loop because my initial value already started at false because I used the wrong numbers.
+    The most challenging part (and at the same time, most helpful) of the assignment was the tests. At first I couldn't get them to work, then I realized they weren't working because I needed to make a get() method that they were calling. Then, another time the tests wouldn't show up, so I had to keep running things until they showed up. Finally, just testing my code and seeing it isn't working how I thought it would was difficult but very helpful compared to manually checking everything.   
 
 General comments on your experience with this assignment:
+    This assignment required me to think a lot, but once I figured out most of what I was supposed to do, it wasn't too much so.
+    Some parts were unclear in the instructions - I didn't realize I needed to make get() or findIndex() until later.
+    

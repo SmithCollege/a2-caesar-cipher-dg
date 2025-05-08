@@ -4,6 +4,8 @@ package a1template;
 
 public interface IndexAccess<T> {
 
+    
+
     /** Returns the value stored at a given index
      * @param i index of element to read
      * @return value stored at the given index
